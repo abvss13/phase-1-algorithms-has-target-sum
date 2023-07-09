@@ -1,18 +1,34 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+function hasTargetSum(arr, target) {
+  const complementSet = new Set();
+
+  for (let num of arr) {
+    const complement = target - num;
+    if (complementSet.has(complement)) {
+      return true;
+    }
+    complementSet.add(num);
+  }
+
+  return false;
 }
 
-/* 
-  Write the Big O time complexity of your function here
-*/
+module.exports = hasTargetSum;
+function hasTargetSum(arr, target) {
+  const complementSet = new Set();
 
-/* 
-  Add your pseudocode here
-*/
+  for (let num of arr) {
+    const complement = target - num;
+    if (complementSet.has(complement)) {
+      return true;
+    }
+    complementSet.add(num);
+  }
 
-/*
-  Add written explanation of your solution here
-*/
+  return false;
+}
+
+module.exports = hasTargetSum;
+
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
